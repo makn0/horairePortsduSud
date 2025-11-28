@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Portuaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#006ABB">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Menu avec onglets -->
+        <div class="tabs">
+            <button class="tab active" onclick="openTab('port1')" role="tab" aria-selected="true">AJACCIO</button>
+            <button class="tab" onclick="openTab('port2')" role="tab" aria-selected="true">PORTO-VECCHIO</button>
+            <button class="tab" onclick="openTab('port3')" role="tab" aria-selected="true">BONIFACIO</button>
+            <button class="tab" onclick="openTab('port4')" role="tab" aria-selected="true">PROPRIANO</button>
+            <button class="tab" onclick="openTab('recherche')" role="tab" aria-selected="true">Recherche</button>
+            <button class="tab" onclick="openTab('favoris')" role="tab" aria-selected="true">Favoris</button>
+            <button class="tab" onclick="openTab('contact')" role="tab" aria-selected="true">Contact</button>
+            <button class="tab" onclick="openTab('config')" role="tab" aria-selected="true">Configuration</button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div id="port1" class="tab-content active">
+            <div id="port1-title">
+                <h2>AJACCIO - Horaires du jour</h2>
+            </div>
+            <div id="port1-data" class="escales"></div>
+        </div>
+        <div id="port2" class="tab-content">
+            <div id="port2-title">
+                <h2>PORTO-VECCHIO - Horaires du jour</h2>
+            </div>
+            <div id="port2-data" class="escales"></div>
+        </div>
+        <div id="port3" class="tab-content">
+            <div id="port3-title">
+                <h2>BONIFACIO - Horaires du jour</h2>
+            </div>
+            <div id="port3-data" class="escales"></div>
+        </div>
+        <div id="port4" class="tab-content">
+            <div id="port4-title">
+                <h2>PROPRIANO - Horaires du jour</h2>
+            </div>
+            <div id="port4-data" class="escales"></div>
+        </div>
+        <div id="recherche" class="tab-content">
+            <h2>Recherche Prévisionnelle</h2>
+            <form id="search-form">
+                <label>Site : <select id="search-site"></select></label>
+                <label>Type d'escale :
+                    <select id="search-type">
+                        <option value="">Tous</option>
+                        <option value="Commerciale">Commerciale</option>
+                        <option value="Croisière">Croisière</option>
+                    </select>
+                </label>
+                <label>Date début : <input type="date" id="search-date-start"></label>
+                <label>Date fin : <input type="date" id="search-date-end"></label>
+                <label>Arrivée/Départ :
+                    <select id="search-arrival-departure">
+                        <option value="arrival">Arrivée</option>
+                        <option value="departure">Départ</option>
+                    </select>
+                </label>
+                <button type="submit">Rechercher</button>
+            </form>
+            <div id="search-results" class="escales"></div>
+        </div>
+        <div id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <div id="contact-data"></div>
+        </div>
+        <div id="config" class="tab-content">
+            <h2>Configuration</h2>
+
+            <!-- Taille de police -->
+            <div class="setting-item">
+                <span>Taille de texte</span>
+                <div class="font-size-selector">
+                    <button data-size="small" class="font-btn">A</button>
+                    <button data-size="medium" class="font-btn active">A</button>
+                    <button data-size="large" class="font-btn">A</button>
+                </div>
+            </div>
+
+            <!-- Mode sombre  -->
+            <div class="setting-item">
+                <span>Mode sombre</span>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <!--  <div class="setting-item">
+                <span>Unités marines</span>
+                <select id="unite-pref">
+                    <option value="knots">Nœuds & milles nautiques</option>
+                    <option value="kmh">km/h & kilomètres</option>
+                </select>
+            </div>-->
+            <div class="setting-item">
+                <span>Météo marine</span>
+                <label class="switch"><input type="checkbox" id="meteo-toggle"><span
+                        class="slider round"></span></label>
+            </div>
+            <div class="setting-item">
+                <span>Langue</span>
+                <select id="lang-select">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="it">Italiano</option>
+                    <option value="co">Corsu</option>
+                </select>
+            </div>
+            <p style="margin-top:60px; text-align:center; color:#888; font-size:14px;">
+                Autres options à venir…
+            </p>
+
+        </div>
+        <div id="favoris" class="tab-content">
+            <h2>Mes favoris</h2>
+            <div id="favoris-list" class="escales"></div>
+            <p id="no-favoris" style="text-align:center; color:#888; margin-top:40px; display:none;">
+                Aucune escale en favori<br>
+                Appuyez sur l'étoile sur une escale pour l'ajouter ici
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

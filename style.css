@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #006ABB;
+    --background-color: #fff;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+}
+
+.tab {
+    background-color: transparent;
+    color: #665;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    transition: color 0.3s;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.tab:hover {
+    color: var(--primary-color);
+}
+
+.tab.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.escales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    justify-content: center;
+}
+
+.escale {
+    /*positionnement absolu des child */
+    position: relative;
+    width: 100%;
+    /*max-width: 300px;*/
+    padding: 15px;
+    /* Réduit pour rapprocher les éléments */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    /* Espace réduit entre les sections */
+}
+
+
+.escale:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.horaire {
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 4px;
+    /* Proche du nom du port */
+}
+
+
+/*.port-depart,
+.port-destination {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.navire-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+*/
+.port-depart {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.port-destination {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.navire-info {
+    margin-top: 30px;
+    /* Évite que le contenu chevauche port-depart */
+    margin-bottom: 30px;
+    /* Évite que le contenu chevauche port-destination */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.croisiere-background {
+    background-color: #1172d49a;
+    /* Une couleur bleu clair, par exemple. Change-la selon tes besoins ! */
+}
+
+.date-escale {
+    margin-left: 5px;
+    /* Espace entre l’heure et la date */
+}
+
+/*.navire-info img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}*/
+.navire-info img {
+    max-width: 80px;
+    /* Taille raisonnable pour le logo */
+    height: auto;
+}
+
+.capacite {
+    font-size: 12px;
+    color: #777;
+}
+
+.navire-info span {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d8c;
+}
+
+#contact-data {
+    overflow-x: auto;
+}
+
+#contact-data table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#contact-data th,
+#contact-data td {
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    text-align: left;
+}
+
+#contact-data th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+#contact-data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#contact-data tr:hover {
+    background-color: #e6f2ff;
+}
+
+/* ——— DARK MODE ——— */
+.dark-mode {
+    --background-color: #0d1117;
+    --text-color: #e6edf3;
+    --secondary-text-color: #8b949e;
+    --border-color: #30363d;
+    --shadow-color: rgba(240, 246, 252, 0.1);
+    --croisiere-bg: rgba(56, 139, 253, 0.15);
+    --primary-color: #58a6ff;
+}
+
+.dark-mode .escale {
+    background-color: #161b22;
+}
+
+.dark-mode .tabs {
+    background-color: #0d1117;
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #161b22;
+    border-color: #30363d;
+    color: #e6edf3;
+}
+
+/* ——— INTERRUPTEUR STYLÉ ——— */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #444;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #006ABB;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* BOUTON MARINETRAFFIC - SUPER BEAU */
+.btn-marinetraffic {
+    display: block;
+    margin: 12px auto 4px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #00aaff, #0088cc);
+    color: white !important;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 170, 255, 0.3);
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.btn-marinetraffic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 170, 255, 0.4);
+    background: linear-gradient(135deg, #0099ee, #0077bb);
+}
+
+.dark-mode .btn-marinetraffic {
+    background: linear-gradient(135deg, #1e90ff, #0077cc);
+}
+
+/* TAILLE DE TEXTE */
+.font-size-selector {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.font-btn {
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.font-btn:nth-child(1) {
+    font-size: 14px;
+}
+
+.font-btn:nth-child(2) {
+    font-size: 18px;
+}
+
+.font-btn:nth-child(3) {
+    font-size: 24px;
+}
+
+.font-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Appliquer la taille globalement */
+html.font-small {
+    font-size: 14px;
+}
+
+html.font-medium {
+    font-size: 16px;
+}
+
+/* valeur par défaut */
+html.font-large {
+    font-size: 18px;
+}
+
+.dark-mode .font-btn {
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+
+.dark-mode .font-btn.active {
+    background: #58a6ff;
+    color: #0d1117;
+}
+
+/* ÉTOILE FAVORIS */
+.fav-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.fav-btn:hover {
+    transform: scale(1.2);
+}
+
+.fav-btn.favori {
+    color: #ffd700;
+    text-shadow: 0 0 8px gold;
+}
+
+/* Onglet favoris */
+#favoris-list:empty+#no-favoris {
+    display: block;
+}
+
+#unite-pref {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.dark-mode #unite-pref {
+    background: #161b22;
+}
+
+/* MÉTÉO MARINE - AFFICHAGE SOUS LE TITRE */
+.meteo-info {
+    margin: 12px 0 8px;
+    padding: 12px;
+    background: rgba(0, 150, 255, 0.12);
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #006ABB;
+    border: 1px solid rgba(0, 106, 187, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .meteo-info {
+    background: rgba(88, 166, 255, 0.18);
+    color: #58a6ff;
+    border-color: rgba(88, 166, 255, 0.4);
+}
+
+.meteo-info span {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+#lang-select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.dark-mode #lang-select {
+    background: #161b22;
+}
