@@ -1,8 +1,7 @@
 // URLs des fichiers CSV
-//const BASE_URL_LOGOS = '/../cciacs/dataports/logos/Maritimes/';
-//const BASE_URL = '/../cciacs/dataports/';
-const BASE_URL_LOGOS = 'http://oleane1.sudcorse.cci.fr/cciacs/dataports/logos/Maritimes/';
-const BASE_URL = 'http://oleane1.sudcorse.cci.fr/cciacs/dataports/';
+const BASE_URL_LOGOS = '/../cciacs/dataports/logos/Maritimes/';
+const BASE_URL = '/../cciacs/dataports/';
+
 const PORTS_CSV = `${BASE_URL}ports.csv`;
 const PORT_JOURNA_CSV = `${BASE_URL}port_journa_imo.csv`;
 const PREVI_PORT_CSV = `${BASE_URL}previPort_imo.csv`;
@@ -298,3 +297,4 @@ document.addEventListener('DOMContentLoaded', () => {
     afficherFavoris();
 
 });
+
