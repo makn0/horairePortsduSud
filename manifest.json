@@ -1,0 +1,22 @@
+{
+    "name": "Sud Corse - Horaires Ports du Sud",
+    "short_name": "Horaire Ports du Sud",
+    "description": "Horaires en temps réel et météo marine des ports Sud Corse",
+    "start_url": "/cciacs/dataports/",
+    "display": "standalone",
+    "background_color": "#006ABB",
+    "theme_color": "#006ABB",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
