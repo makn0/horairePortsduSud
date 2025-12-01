@@ -1,7 +1,6 @@
 // URLs des fichiers CSV
 const BASE_URL_LOGOS = '/../cciacs/dataports/logos/Maritimes/';
 const BASE_URL = '/../cciacs/dataports/';
-
 const PORTS_CSV = `${BASE_URL}ports.csv`;
 const PORT_JOURNA_CSV = `${BASE_URL}port_journa_imo.csv`;
 const PREVI_PORT_CSV = `${BASE_URL}previPort_imo.csv`;
@@ -295,6 +294,40 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPortData('port1');
     populateSiteSelect();
     afficherFavoris();
-
 });
+// ======================= SWIPE ENTRE ONGLETS (mobile) =======================
+let touchStartX = 0;
+let touchEndX = 0;
+const swipeThreshold = 50; // pixels minimum pour déclencher le swipe
 
+document.querySelector('.container').addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.querySelector('.container').addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    if (Math.abs(touchStartX - touchEndX) < swipeThreshold) return;
+
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const activeTab = document.querySelector('.tab.active');
+    const currentIndex = tabs.indexOf(activeTab);
+
+    let newIndex;
+
+    if (touchEndX < touchStartX) {
+        // swipe gauche → onglet suivant
+        newIndex = (currentIndex + 1) % tabs.length;
+    } else if (touchEndX > touchStartX) {
+        // swipe droite → onglet précédent
+        newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    }
+
+    if (newIndex !== undefined && tabs[newIndex]) {
+        const newTabName = tabs[newIndex].getAttribute('onclick').match(/'([^']+)'/)[1];
+        openTab(newTabName);
+    }
+}
