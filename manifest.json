@@ -9,6 +9,10 @@
     "theme_color": "#006ABB",
     "orientation": "portrait-primary",
     "lang": "fr",
+    "categories": [
+        "travel",
+        "navigation"
+    ],
     "icons": [
         {
             "src": "/horairePortsduSud/icon-192.png",
