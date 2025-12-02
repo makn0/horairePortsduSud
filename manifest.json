@@ -1,33 +1,26 @@
 {
-  "name": "Horaires Ports du Sud",
-  "short_name": "Ports Sud",
-  "description": "Horaires en direct, météo marine, favoris avec rappel et MarineTraffic – Corse du Sud",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#006ABB",
-  "theme_color": "#006ABB",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "fr",
-  "categories": ["travel", "navigation"],
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
+    "name": "Sud Corse - Horaires Ports du Sud",
+    "short_name": "Horaire Ports du Sud",
+    "description": "Horaires en temps réel et météo marine des ports de Corse du sud",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#006ABB",
+    "theme_color": "#006ABB",
+    "orientation": "portrait-primary",
+    "lang": "fr",
+    "icons": [
+        {
+            "src": "/horairePortsduSud/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/horairePortsduSud/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
 }
